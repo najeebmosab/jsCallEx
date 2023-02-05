@@ -31,6 +31,23 @@
     }
     whoIsStronger(hero.getStrength);
     whoIsStronger(hero.getStrength.bind(hero));
+
+    const obj = {
+        name: "mosab",
+        getName: function () {
+            console.log(this.name);
+        },
+        getDepllayName: function () {
+            debugger
+            setTimeout(function(){
+                console.log(obj.name);
+
+            }, "1000");
+        }
+    }
+
+    obj.getName();
+    obj.getDepllayName();
 </script>
 
 </html>
