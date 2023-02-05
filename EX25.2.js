@@ -8,7 +8,7 @@ const obj = {
         debugger
         setTimeout(function () {
             obj.getName();
-
+            obj.getDepllayName();
         }, "1000");
     }
 }
