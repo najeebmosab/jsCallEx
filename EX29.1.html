@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    const getIDs = () => {
+      return  new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve([532, 543, 753, 1, 5]);
+            }, 1500);
+        });
+    }
+    const getIDAscy = async () => {
+        try {
+            const id = await getIDs();
+            console.log(id);
+            const res = await getRecipe(id[1]);
+            console.log(res);
+        } catch (err) {
+            console.log(err)
+        }
+    }
+    getIDAscy();
+    const getRecipe = (recipeID) => {
+        return new Promise((resolve, reject) => {
+            setTimeout((ID) => {
+                const recipe = {
+                    title: "Fresh tomato pasta",
+                    publisher: "Pinchas Hodadad",
+                };
+                resolve(`${ID}: ${recipe.title}`);
+            }, 1500, recipeID);
+        });
+    };
+
+
+    
+
+    // const getRecipeAsync= async()=> {
+    //   const res =  await getRecipe(5);
+    // }
+
+</script>
