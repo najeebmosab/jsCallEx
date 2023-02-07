@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="Joke">Create joke</button>
+    <h2 id="title"></h2>
+    <p id="joke"></p>
+</body>
+<script>
+    const btn = document.querySelector("#Joke");
+    const title = document.querySelector("#title");
+    const joke = document.querySelector("#joke");
+    btn.addEventListener("click", () => {
+        fetch("https://api.jokes.one/jod").then((res) => res.json())
+            .then((data) => {
+                console.log(data.contents.jokes[0].joke);
+
+                title.innerHTML = data.contents.jokes[0].joke.title;
+                joke.innerHTML = data.contents.jokes[0].joke.text;
+            });
+    });
+</script>
+
+</html>
