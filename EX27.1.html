@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    function f1(n) {
+        a = new Promise((res, rej) => {
+            if (n > 10) {
+                res(`${n} is greater than 10.`);
+            } else if (n < 10) {
+                reject(`${n} is less than 10.`);
+            } else {
+                resolve(`${n} is equal to 10.`);
+            }
+        });
+        return a;
+    }
+    f1(11).then((res) => { console.log("Resolved:", res); }).catch((error) => {
+    console.log("Rejected:", error);
+  });
+
+
+
+ 
+</script>
+
+</html>
