@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const arr = ["extraordinary",100, "represent", "dramatically", "personality", "understand", "innovation", "excellent", "flexibility", "performance", "astounding"];
+    function makeAllCaps(arr) {
+        return new Promise((res, rej) => {
+            for (let i = 0; i < arr.length; i++) {
+                const element = arr[i];
+                res(arr[i] = element.toUpperCase());
+            }
+        });
+    }
+
+    function sortWords(){
+        return new Promise((res, rej) => {
+           arr.forEach((word)=>{
+            if (typeof word !== "string") {
+                rej(new Error("not a string !!!!!"));
+            }
+           });
+           res(arr.sort());
+        });
+    }
+    makeAllCaps(arr).then(sortWords(arr).then((res) =>{console.log(res)}).catch((err)=>{console.log(err.message);}))
+</script>
+
+</html>
